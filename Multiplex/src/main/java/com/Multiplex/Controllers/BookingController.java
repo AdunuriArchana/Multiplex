@@ -44,9 +44,8 @@ public class BookingController {
 	public Booking updateBooking(@RequestBody Booking
 		  booking) { return this.bookingservice.updateBooking(booking); }
 		  
-		  @DeleteMapping("/bookings/{book_id}") public void
-
-	deleteBookingById(@PathVariable int book_id) {
+		  @DeleteMapping("/bookings/{book_id}")
+		  public void deleteBookingById(@PathVariable int book_id) {
 		  this.bookingservice.deleteBookingById(book_id);
 		  }
 }

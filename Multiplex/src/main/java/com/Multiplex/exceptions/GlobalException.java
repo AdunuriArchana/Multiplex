@@ -29,7 +29,7 @@ public class GlobalException  {
 		return new ResponseEntity(message3,HttpStatus.NOT_FOUND);
 	}
 	
-	  @Value(value="${data.exception.message3}") private String message4;
+	  @Value(value="${data.exception.message4}") private String message4;
 	  
 	  @ExceptionHandler(BookingNotFoundException.class) public ResponseEntity
 	  handleBookingNotfoundException(BookingNotFoundException ex) { return new

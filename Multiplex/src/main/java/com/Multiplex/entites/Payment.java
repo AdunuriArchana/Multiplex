@@ -1,6 +1,9 @@
 package com.Multiplex.entites;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,6 +26,9 @@ public class Payment {
 		return "Payment [paymentid=" + paymentid + ", paymenttype=" + paymenttype + ", date=" + date + ", time=" + time
 				+ "]";
 	}
+	@Id
+	@Column(name="paymentid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getPaymentid() {
 		return paymentid;
 	}

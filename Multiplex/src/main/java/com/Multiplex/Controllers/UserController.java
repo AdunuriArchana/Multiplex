@@ -35,16 +35,16 @@ public class UserController {
 		return new ResponseEntity(userServices.getUserByID(user_id),HttpStatus.OK);
 	}
 	 
-	@PostMapping("/user")
+	@PostMapping("/users")
 	public  Users addUser(@RequestBody Users user) {
 		return this.userServices.addUser(user);
 	}
-	@DeleteMapping("/user/{userid}")
+	@DeleteMapping("/users/{userid}")
 	public void deleteUser(@PathVariable int userid) {
 		this.userServices.deleteUser(userid);
 		
 	}
-	@PutMapping("/user")
+	@PutMapping("/users")
 	public Users updateUser(@RequestBody Users user) {
 		return this.userServices.updateUser(user);
 	}

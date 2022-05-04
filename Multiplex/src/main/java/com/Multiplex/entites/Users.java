@@ -1,6 +1,9 @@
 package com.Multiplex.entites;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,6 +27,9 @@ public class Users {
 			this.email_id = email_id;
 			this.password = password;
 		}
+		@Id
+		@Column(name="user_id")
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		public int getUser_id() {
 			return user_id;
 		}

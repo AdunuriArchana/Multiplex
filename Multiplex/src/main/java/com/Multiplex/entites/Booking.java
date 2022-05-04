@@ -1,6 +1,9 @@
 package com.Multiplex.entites;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +14,7 @@ import javax.persistence.Table;
 		public Booking() {
 			super();
 		}
-			@Id
+			
 		private int book_id;
 		private int seats;
 		private String date;
@@ -32,6 +35,9 @@ import javax.persistence.Table;
 		public String toString() {
 			return "Booking [book_id=" + book_id + ", seats=" + seats + ", date=" + date + ", time=" + time + ", user_id=" + user_id +", movie_id=" + movie_id + "]";
 		}
+		@Id
+		@Column(name="book_id")
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 		public int getBook_id() {
 			return book_id;

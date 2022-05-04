@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+//import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 @Entity
@@ -14,30 +14,20 @@ public class Moviedetails {
 	public Moviedetails() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	private Movies mds;
-	@OneToOne
-	@PrimaryKeyJoinColumn
-	public Movies getMds() {
-		return mds;
-	}
-	public void setMds(Movies mds) {
-		this.mds = mds;
-	}
-	
+	}	
 	private String date;
 	private String time;
 	private String language;
 	
 	private int screen_id;
-	
-	
-	public Moviedetails(  String date, String time, String language, int screen_id) {
+	public Moviedetails(String date, String time, String language, int screen_id) {
 		this.date = date;
 		this.time = time;
 		this.language = language;
 		this.screen_id = screen_id;
+		
 	}
+	
 	public String getDate() {
 		return date;
 	}
@@ -66,8 +56,10 @@ public class Moviedetails {
 	public void setScreen_id(int screen_id) {
 		this.screen_id = screen_id;
 	}
-	
-	 @Override public String toString() { return "Moviedetails [ date=" + date +
-	 ", time=" + time + ", language=" + language + ", screen_id=" + screen_id +
-	 "]"; }	
+
+	@Override
+	public String toString() {
+		return "Moviedetails [date=" + date + ", time=" + time + ", language=" + language + ", screen_id=" + screen_id
+				+ "]";
+	}	
 }

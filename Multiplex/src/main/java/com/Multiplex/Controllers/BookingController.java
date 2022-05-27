@@ -23,26 +23,31 @@ public class BookingController {
 		 
 		private BookingServices bookingservice;
 
-	@RequestMapping("/booking") public String booking() { return
-		  "this is booking list"; }
+	@RequestMapping("/booking") 
+	public String booking() { 
+		return "this is booking list"; }
 
-	@GetMapping("/bookings") public List<Booking> getBooking() { return
-		  this.bookingservice.getBooking(); }
+	@GetMapping("/bookings") 
+	public List<Booking> getBooking() {
+		return this.bookingservice.getBooking(); }
 
-	@GetMapping(value="/bookings/{book_id}") public ResponseEntity
-		  getBookingById(@PathVariable ("book_id") int book_id) { return new
-		  ResponseEntity(bookingservice.getBookingById(book_id),HttpStatus.OK);
+	@GetMapping(value="/bookings/{book_id}")
+	public ResponseEntity getBookingById(@PathVariable ("book_id") int book_id) { 
+		return new ResponseEntity(bookingservice.getBookingById(book_id),HttpStatus.OK);
 		 
 		  }
 
-	@PostMapping("/bookings") public Booking addBooking(@RequestBody Booking
-		  booking) { return this.bookingservice.addBooking(booking); }
+	@PostMapping("/bookings")
+	public Booking addBooking(@RequestBody Booking booking) { 
+		return this.bookingservice.addBooking(booking);
+		}
 		 
 		 
 
 	@PutMapping("/bookings")
-	public Booking updateBooking(@RequestBody Booking
-		  booking) { return this.bookingservice.updateBooking(booking); }
+	public Booking updateBooking(@RequestBody Booking booking) {
+		return this.bookingservice.updateBooking(booking); 
+		}
 		  
 		  @DeleteMapping("/bookings/{book_id}")
 		  public void deleteBookingById(@PathVariable int book_id) {

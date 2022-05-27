@@ -10,6 +10,6 @@ import com.Multiplex.entites.Movies;
 
 public interface MoviesDAO extends JpaRepository<Movies,Integer>{
 
-@Query("Select m from Movies m where movie_name='Happy'")
+@Query("Select m from Movies m where movie_name='Hello'")
 List<Movies>getMovieByName();
 }

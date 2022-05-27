@@ -16,7 +16,7 @@ import javax.persistence.Id;
 //import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name="movies")
+@Table(name="movie")
 
 public class Movies 
 {
@@ -25,20 +25,17 @@ public class Movies
 		// TODO Auto-generated constructor stub
 	}
 	private int movie_id;
-	//private Moviedetails moviedetails;
-	//@OneToOne(mappedBy = "mds",cascade = CascadeType.ALL)
-	//@JoinColumn(name="movie_id")
-	//public Moviedetails getMoviedetails() {
-	//	return moviedetails;
-	//}
-	//public void setMoviedetails(Moviedetails moviedetails) {
-	//	this.moviedetails = moviedetails;
-	//}
 	private  String movie_name;
+	private String date;
+	private String time;
+	private String language;
 	
-	public Movies(int movie_id,  String movie_name) {
+	public Movies(int movie_id,  String movie_name,String date, String time, String language) {
 		this.movie_id = movie_id;
 		this.movie_name = movie_name;
+		this.date = date;
+		this.time = time;
+		this.language = language;
 	}
 	@Id
 	@Column(name="movie_id")
@@ -55,8 +52,31 @@ public class Movies
 	public void setMovie_name(String movie_name) {
 		this.movie_name = movie_name;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 	@Override
 	public String toString() {
-		return "Movies [movie_id=" + movie_id + ", movie_name=" + movie_name + "]";
+		return "Movies [movie_id=" + movie_id + ", movie_name=" + movie_name + ", date=" + date + ", time=" + time
+				+ ", language=" + language + "]";
 	}
+	
+//	public String toString() {
+//		return "Movies [movie_id=" + movie_id + ", movie_name=" + movie_name + "]";
+//	}
 }

@@ -1,10 +1,15 @@
 package com.Multiplex.entites;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +26,14 @@ import javax.persistence.Table;
 		private String time;
 		private int user_id;
 		private int movie_id;
-		public Booking(int book_id, int seats, String date, String time,int user_id,int movie_id) {
+	
+		
+		@OneToMany(cascade = CascadeType.ALL)
+		@JoinColumn(name="movie_id")
+		List<Users>users;
+		
+
+		public Booking(int book_id, int seats, String date, String time,int user_id,int movie_id,String email_id) {
 			super();
 			this.book_id = book_id;
 			this.seats = seats;

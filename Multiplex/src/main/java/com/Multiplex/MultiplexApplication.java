@@ -8,6 +8,7 @@ public class MultiplexApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MultiplexApplication.class, args);
+		System.out.println("Welcome to Multiplex");
 	}
 
 }
